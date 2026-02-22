@@ -1,0 +1,24 @@
+// الملف الرئيسي (Root Build File)
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // هذا المحرك الذي يربط المشروع بنظام أندرويد
+        classpath 'com.android.tools.build:gradle:8.2.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        // ضروري جداً لمكتبات TWA
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
