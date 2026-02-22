@@ -1,0 +1,28 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.shofyou.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.shofyou.app"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        // الرابط الذي سيفتحه التطبيق
+        resValue "string", "launchUrl", "https://shofyou.com/"
+        resValue "string", "hostName", "shofyou.com"
+        
+        // اتركها فارغة للـ Debug
+        resValue "string", "assetStatements", '[]'
+    }
+}
+
+dependencies {
+    // هذه المكتبة هي سر سرعة TWA
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.5.0'
+}
